@@ -1,0 +1,210 @@
+---
+title: "42 Transcendence"
+publishedAt: "2024-11-20"
+summary: "Ou comment passer 3 semaines sur un fichier de configuration ELK"
+images:
+  - "/images/projects/transcendence/transcendence_optimized.webp"
+  - "/images/projects/transcendence/architecture.png"
+  - "/images/projects/transcendence/gameplay.png"
+team:
+  - name: "Quentin Coudeyre"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/quentincoudeyre/"
+  - name: "Geoffrey Dornic"
+    role: "Software Engineer"
+    avatar: "/images/gdor.jpg"
+    linkedIn: ""
+  - name: "Luke Montgomri"
+    role: "Software Engineer"
+    avatar: "/images/luke.png"
+    linkedIn: ""
+---
+
+<div style={{ display: 'flex', justifyContent: 'space-between',  gap: '0.1rem',  margin: '0.1rem' }}>
+    <a href="https://projects.intra.42.fr/projects/ft_transcendence"> <img alt="Static Badge" src='https://img.shields.io/badge/Transcendence-black?style=flat-square&logo=42&logoColor=white&labelColor=black'/></a>
+    <a href="https://github.com/qcoudeyr/42_CommonCore/tree/main/42_TRANSCENDENCE"><img alt="Static Badge" src="https://img.shields.io/badge/Source_Code-black?style=flat-square&logo=github&logoSize=auto&labelColor=black"/></a>
+</div>
+
+
+## Introduction
+
+Bienvenue sur notre projet **Transcendence** !
+
+Transcendence est le dernier projet du tronc commun de 42. Il s'agit de créer un site web interactif permettant aux utilisateurs de jouer au célèbre jeu **Pong** en ligne contre d'autres joueurs. Ce projet de groupe nous permet de mettre en pratique l'ensemble des compétences acquises durant notre cursus, en abordant des aspects tels que le développement web, la communication en temps réel, l'architecture en microservices et la sécurité des applications.
+
+### Prérequis
+
+Pour réaliser ce projet, plusieurs compétences et connaissances sont nécessaires :
+
+- **Développement Front-End** : Maîtrise de HTML, CSS et JavaScript pour construire une interface utilisateur réactive et attrayante.
+- **Framework Back-End** : Expérience avec Django pour gérer la logique côté serveur, les API et les WebSockets.
+- **Bases de Données** : Compréhension des systèmes de gestion de bases de données pour stocker les informations des utilisateurs et les données de jeu.
+- **WebSockets** : Connaissance des protocoles de communication en temps réel pour permettre des interactions instantanées entre les joueurs.
+- **DevOps** : Familiarité avec les outils comme Docker pour la conteneurisation, et ELK Stack pour le monitoring et la gestion des logs.
+- **Sécurité Informatique** : Application des bonnes pratiques en matière de cybersécurité pour protéger les données sensibles et sécuriser les services.
+
+Ce projet est un défi passionnant qui nous permet de collaborer efficacement tout en consolidant nos compétences techniques.
+
+## Notre projet
+
+Pour bien commencer ce travail, nous nous sommes répartis le travail comme suit :
+1. Geoffrey s'est occupé de Django, de la base de données, des WebSockets et de la physique du jeu (et d'autres choses mais peu importe).
+1. Luke s'est occupé du Front-End, des liens avec Django et des graphismes du jeu (une tâche que je ne voulais absolument pas gérer).
+1. Et pour finir, vu que j'avais de l'avance sur les 2 autres, je me suis attelé à l'infrastructure, donc à la structure en microservices, à la partie DevOps, à la sécurité entre les services, etc.
+
+### Nos modules
+
+Voici une petite liste des modules que nous avons implémentés :
+
+#### Majeurs :
+- Django
+- Gestion des utilisateurs
+- Joueurs à distance
+- Clavardage en direct
+- Pare-feu d'application + Vault
+- Elastic Stack
+- Microservices
+- 3D ThreeJs pour le rendu du jeu
+- Rendu du jeu côté serveur
+
+#### Mineurs :
+- Base de données
+- Statistiques
+- RGPD
+- Suivi des performances avec Prometheus et Grafana
+
+## Videos
+
+<div style={{
+  display: 'flex',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  gap: '2rem',
+  margin: '2rem 0'
+}}>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Connexion et Enregistrement</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_login.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Historique Des Matchs </h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_match_record.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Menu De Jeu</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_play_menu.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Statistiques Du Comptes</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_stats.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Page de Profile</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_profile.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Conversations Publique Et Privée</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_talk_private.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Invitation Privée Pour Une Partie</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_invite_with_notif.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Lancement De Partie Privée</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_launch_game_invite.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Gameplay</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_gameplay.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem'
+  }}>
+    <h3>Statistiques Après Match</h3>
+    <video width="320" height="240" controls preload="none">
+      <source src="/images/projects/transcendence/tr_stat_after_match.webm" type="video/webm" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+## Mon travail
+
+ **Écriture en cours**

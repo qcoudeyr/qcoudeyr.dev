@@ -1,0 +1,188 @@
+---
+title: "Installation de Plausible"
+publishedAt: "2024-11-20"
+summary: "Étude de cas : installation de Plausible sur mon serveur"
+image: "/images/blog/privacy-focused-web-analytics.png"
+tag: ["Tutoriel", "FOSS", "Analytics"]
+---
+<div style={{ display: 'flex', paddingLeft: '10px' }}>
+    <img alt="Static Badge" src='https://img.shields.io/badge/DIFFICULT%C3%89-Intermédiaire-yellow?style=flat-square&logoSize=auto&labelColor=black'/>
+    <a href="https://github.com/plausible/community-edition/"><img alt="Static Badge" src="https://img.shields.io/badge/Source_Code-black?style=flat-square&logo=github&logoSize=auto&labelColor=black"/></a>
+</div>
+
+Étant en train d'installer mon VPS pour ce portfolio, j'en profite pour faire des tutoriels sur chaque technologie que j'installe. Si cela peut servir à quelqu'un, pourquoi pas !
+
+## Plausible, c'est quoi ?
+Plausible Analytics est un outil d'analyse web open-source, léger et axé sur la confidentialité, offrant une alternative à Google Analytics.
+
+La version **community edition** est gratuite, ce qui fait de Plausible un incontournable du self-host.
+
+## Fonctionnalités Clés
+
+- **Interface épurée** : Fournit des métriques essentielles sur une seule page sans menus complexes.
+- **Respect de la vie privée** : Ne collecte aucune donnée personnelle ni adresse IP, conforme aux réglementations GDPR, CCPA et PECR.
+- **Script léger** : Améliore les temps de chargement des pages grâce à un script minimaliste.
+- **Rapports automatisés** : Envoi de rapports hebdomadaires ou mensuels par email ou Slack.
+- **Suivi des conversions** : Permet de définir des événements personnalisés et de suivre les objectifs importants.
+
+## Technologies Utilisées
+
+- **Backend** : Développé avec Elixir et le framework Phoenix.
+- **Base de données** : Utilise PostgreSQL pour les données générales et ClickHouse pour les statistiques.
+- **Frontend** : Interface interactive construite avec React et stylisée avec TailwindCSS.
+
+## Installation
+
+Passons à l'installation.
+
+Commençons par cloner le repo :
+```sh
+git clone -b v2.1.4 --single-branch https://github.com/plausible/community-edition plausible-ce
+```
+Ensuite, je crée un fichier .env avec une URL de base et un token généré par openssl. J'ajoute la variable d'environnement **HTTP_PORT** car j'utilise un Reverse Proxy.
+
+```sh
+touch .env
+echo "BASE_URL=https://plausible.qcoudeyr.com" >> .env
+echo "SECRET_KEY_BASE=$(openssl rand -base64 48)" >> .env
+echo "HTTP_PORT=8000" >> .env
+```
+Une fois cela terminé, il ne me reste plus qu'à mettre à jour mon reverse proxy pour gérer la nouvelle adresse locale suivante **http://localhost:8000**
+
+Enfin, une petite commande pour lancer Plausible en local.
+
+```sh
+# À exécuter dans le dossier cloné. e.g : /home/exemple/plausible-ce/
+docker compose up -d
+```
+Et voilà, la partie installation est terminée. Vraiment facile, n'est-ce pas ?!
+P.S: J'ai juste galéré 2 heures en pensant que la configuration de Caddy ne laissait pas passer les websockets (wss://) mais c'était juste au moment du git clone qu'un des fichiers s'est corrompu... Yay...
+
+## Maintenant, la configuration...
+
+La configuration permet de mettre en place les divers sites que l'on souhaite monitorer et de générer les scripts en fonction de la technologie utilisée par le site.
+
+Commençons par nous connecter au site après l'avoir configuré dans les endroits suivants :
+
+* Mettre à jour les **DNS RECORD** chez votre registrar si vous utilisez un nom de domaine.
+* Mettre à jour la configuration de votre logiciel de Reverse Proxy (Pour moi caddy)
+
+Maintenant, sur le site, je crée mon utilisateur.
+
+<div style={{
+  justifyContent: 'space-between',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+<img src="/images/blog/plausible1.png"    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}/>
+</div>
+
+On met en place l'URL du site ainsi que le fuseau horaire.
+
+<div style={{
+  justifyContent: 'space-between',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+<img src="/images/blog/plausible2.png"    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}/>
+</div>
+
+Le site nous demande de mettre en place le script en fonction de ce que l'on veut comme statistiques.
+(Personnellement, je n'ai rien mis car le script de base me suffit)
+
+<div style={{
+  justifyContent: 'space-between',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <img src="/images/blog/plausible3.png"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}/>
+</div>
+
+Pour installer le script dans ma configuration Next.js, j'ai dû farfouiller sur internet pour trouver [un package npm](https://github.com/4lejandrito/next-plausible) à installer qui permet de gérer automatiquement le script.
+
+J'ai donc suivi les directives et placé le code suivant dans les fichiers correspondants :
+
+<div style={{
+  justifyContent: 'space-between',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <img
+    src="/images/blog/plausible_nextjs.png"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}
+    alt="Plausible Next.js"
+  />
+[Ajout du script dans mon next.conf.js]
+  <img
+    src="/images/blog/plausible_pagetsx.png"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}
+    alt="Plausible Pages TSX"
+  />
+[Ajout du script dans mon page.tsx]
+  <img
+    src="/images/blog/plausible_caddy.png"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}
+    alt="Plausible Caddy"
+  />
+[Config reverse-proxy pour caddy](https://plausible.io/docs/proxy/guides/caddy)
+</div>
+
+Et après un redémarrage des services concernés, les statistiques sont accessibles !
+
+<div style={{
+  justifyContent: 'space-between',
+  gap: '1rem',
+  margin: '2rem 0'
+}}>
+  <img src="/images/blog/plausible_overview_rs.png"
+    style={{
+      maxWidth: '100%',
+      height: 'auto',
+      flex: '1'
+    }}/>
+</div>
+
+## Quelques commentaires
+
+Bon, petit tuto sur l'installation de Plausible.
+Ce n'est pas ma première installation mais en revanche c'était bien ma première configuration en utilisant Next.js et Caddy.
+J'ai pas mal galéré vu qu'il n'y a pas beaucoup de ressources et n'ayant pas beaucoup de logs, il faut se débrouiller avec les moyens du bord (console de dev dans le navigateur, docker logs, github issues, forum, etc...)
+
+Sinon, je ferai un retour d'expérience dans quelques temps une fois que j'aurai terminé avec la construction et la configuration de ce site, et lorsque j'attaquerai la publication sur **dev.to**.
+
+Merci de m'avoir lu !
+
+## Ressources
+
+* [Plausible](https://plausible.io/)
+* [Plausible CE](https://github.com/plausible/analytics)
+* [Nextjs-plausible](https://github.com/4lejandrito/next-plausible)
+* [Plausible avec Caddy en Proxy](https://plausible.io/docs/proxy/guides/caddy)
+* [Caddy](https://caddyserver.com/)
+* [Next.js](https://nextjs.org/)
+

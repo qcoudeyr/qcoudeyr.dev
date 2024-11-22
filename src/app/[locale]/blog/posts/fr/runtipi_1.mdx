@@ -1,0 +1,79 @@
+---
+title: "Premiers pas avec Runtipi"
+publishedAt: "2024-11-20"
+image: "/images/blog/runtipi-appstore.png"
+summary: "Retour d'expérience sur l'auto-hébergement"
+tag: "Tutoriel"
+---
+<div style={{ display: 'flex', paddingLeft: '10px' }}>
+    <img alt="Static Badge" src='https://img.shields.io/badge/DIFFICULT%C3%89-Débutant-brightgreen?style=flat-square&logoSize=auto&labelColor=black'/>
+    <a href="https://github.com/runtipi/runtipi"><img alt="Static Badge" src="https://img.shields.io/badge/Source_Code-black?style=flat-square&logo=github&logoSize=auto&labelColor=black"/></a>
+</div>
+
+# Premiers pas avec Runtipi : Mon aventure dans l'auto-hébergement
+
+Passionné d'informatique et bricoleur dans l'âme, j'ai passé ces dernières années à expérimenter l'auto-hébergement. Aujourd'hui, je souhaite vous partager ma découverte de Runtipi, un outil qui a vraiment changé ma façon de gérer mon serveur domestique.
+
+## Runtipi, c'est quoi au juste ?
+
+[Runtipi](https://runtipi.io/) est un petit bijou [open-source](https://github.com/runtipi/runtipi) qui fait sensation dans le monde de l'auto-hébergement. Imaginez un gestionnaire Docker avec une interface web tellement intuitive qu'il rend l'orchestration de conteneurs accessible à tous, même aux débutants.
+
+## Pourquoi j'ai utilisé Runtipi
+
+Je me souviens encore de ces longues soirées passées à bidouiller des fichiers Docker, à chercher des solutions sur les forums... J'avais besoin d'autre chose, de plus simple. Et puis j'ai découvert Runtipi. Ce qui m'a séduit ? Sa capacité à allier simplicité et puissance. Mais c'est aussi son point faible.
+
+## Installation pas à pas (en toute sécurité)
+
+La sécurité, parlons-en. Les erreurs que j'ai commises m'ont appris une chose : une bonne installation, c'est la base de tout.
+
+### Ce qu'il vous faut pour démarrer
+
+- Ubuntu 18.04 LTS ou plus récent (Perso j'utilise la Ubuntu 22.04 LTS)
+- Au moins 4 Go de RAM (optez pour 2 Go de supplémentaire par service en plus)
+- Plus de 10 Go d'espace disque disponible
+- Un bon café ☕ (indispensable !)
+
+### L'installation en détail
+
+1. D'abord, mettons votre système à jour :
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+2. Installez Runtipi avec l'installateur officiel :
+
+```bash
+curl -L https://setup.runtipi.io | bash
+```
+
+### Les règles d'or de la sécurité
+
+En matière de sécurité, voici mes conseils les plus précieux :
+
+1. La règle numéro un : n'exposez **jamais** Runtipi directement sur Internet
+2. Si vous utilisez un VPS, pensez à :
+   - Mettre en place un pare-feu (ufw est parfait pour ça)
+   - Configurer un VPN (Tailscale est mon préféré) ou utiliser les [tunnels Cloudflare](https://decloudflare.crimeflare.eu.org/#deCloudflare=readme/fr.md)
+   - Garder tous vos ports fermés par défaut
+
+### Un mot sur Docker
+
+Petit conseil qui m'aurait évité bien des soucis : si Docker est déjà installé sur votre machine, vérifiez que c'est bien la version officielle. Faites un petit test :
+
+```bash
+docker compose version
+```
+
+Si la commande ne passe pas, il vous manque probablement le plugin Docker Compose.
+
+## Pour conclure
+
+Runtipi rend l'auto-hébergement vraiment accessible, mais n'oubliez pas : qui dit puissance dit responsabilité. Gardez toujours un œil sur la sécurité, les mises à jour, et n'hésitez pas à rejoindre la communauté si vous avez besoin d'aide.
+
+*Amusez-vous bien avec votre nouveau serveur !*
+
+# Ressources utiles
+
+- [Le code source de Runtipi](https://github.com/runtipi/runtipi)
+- [Le site officiel](https://runtipi.io/)

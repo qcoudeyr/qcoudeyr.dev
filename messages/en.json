@@ -1,0 +1,108 @@
+{
+    "person": {
+        "role": "Software Developer"
+    },
+    "newsletter": {
+        "title": "Subscribe to {firstName}'s Newsletter",
+        "description": "I occasionally write about design, technology, and share thoughts on the intersection of creativity and engineering",
+        "button": "Sign up"
+    },
+    "home": {
+        "label": "Home",
+        "title": "My Portfolio",
+        "description": "Portfolio website showcasing my work as a {role} and tools that i discover",
+        "headline": "Sofware developer",
+        "subline": "I'm Quentin, a Junior sofware developer from 42 School. I'm a fervent Linux user, a FOSS supporter and, a convinced self-hoster.",
+        "blogline": "Latest from the blog"
+	},
+    "about": {
+        "label": "About",
+        "title": "About me",
+        "description": "Meet {name}, {role} from {location}",
+        "intro": {
+            "title": "Introduction",
+            "description": "I'm a self-hosted and FOSS enthusiast with a passion for DevOps and system administration. Currently studying at 42 School, I've completed the common core and specialize in DevOps and sysadmin. I aim to become an active member of the community soon."
+        },
+        "work": {
+            "title": "Work Experience",
+            "experiences": {
+                "1": {
+                    "company": "French Foreign Legion Reserve",
+                    "timeframe": "2019 - 2024",
+                    "role": "Reservist",
+                    "achievements": "Developed discipline and teamwork skills while serving as a reservist."
+                },
+                "2": {
+                    "company": "Freelance Project",
+                    "timeframe": "2023",
+                    "role": "System Administrator",
+                    "achievements": "Deployed Linux infrastructure with fail2ban, WAF, and self-hosted Nextcloud suite for a professional client.;Configured network settings for external accessibility and security."
+                }
+            }
+        },
+        "studies": {
+            "title": "Studies",
+            "institutions": {
+                "1": {
+                    "name": "42 School",
+                    "description": "Completed core curriculum with focus on DevOps and system administration."
+                },
+                "2": {
+                    "name": "University of Montpellier",
+                    "description": "Studied electronics and embedded systems with STM32 and Arduino."
+                }
+            }
+        },
+        "technical": {
+            "title": "Technical Skills",
+            "skills": {
+                "1": {
+                    "title": "DevOps & SysAdmin",
+                    "description": "Experienced with Ubuntu Server, virtualization (VMware ESXi, Proxmox), and monitoring tools like ELK Stack, Prometheus, and Grafana."
+                },
+                "2": {
+                    "title": "Programming Languages",
+                    "description": "Proficient in C and C++. Familiar with Python, including libraries like Selenium and Pandas."
+                },
+                "3": {
+                    "title": "Full Stack Development",
+                    "description": "Learning full-stack development using Django, React, and Next.js."
+                },
+                "4": {
+                    "title": "Security & Networking",
+                    "description": "Installed Hashicorp Vault in Docker, Nginx with ModSecurity WAF, and configured network monitoring with Cisco ISA 550W."
+                },
+                "5": {
+                    "title": "Personal Projects",
+                    "description": "Built a rally car dashboard using Raspberry Pi and custom Android applications."
+                }
+            }
+        }
+    },
+    "blog": {
+        "label": "Blog",
+        "title": "Usefull Blog",
+        "description": "Read what {name} has been up to recently"
+    },
+    "work": {
+        "label": "Work",
+        "title": "My projects",
+        "description": "Design and dev projects by {name}"
+    },
+    "gallery": {
+        "label": "Gallery",
+        "title": "My photo gallery",
+        "description": "A photo collection by {name}"
+    },
+    "resources": {
+        "label": "Resources",
+        "title": "List of differents projects, resources and usefull links",
+        "description": "A list of usefull resources link by {name}"
+    },
+	"warning":{
+		"title":"This part of the website is still in progress !"
+	},
+    "projectCard": {
+        "label": "Read Case Study"
+    }
+}

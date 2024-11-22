@@ -1,0 +1,81 @@
+---
+title: "Getting Started with Runtipi"
+publishedAt: "2024-11-20"
+image: "/images/blog/runtipi-appstore.png"
+summary: "A Personal Journey into Self-Hosting"
+tag: "Tutorial"
+---
+
+<div style={{ display: 'flex', paddingLeft: '10px' }}>
+	<img alt="Static Badge" src='https://img.shields.io/badge/DIFFICULTY-Easy-brightgreen?style=flat-square&logoSize=auto&labelColor=black'/>
+	<a href="https://github.com/runtipi/runtipi"><img alt="Static Badge" src="https://img.shields.io/badge/Source_Code-black?style=flat-square&logo=github&logoSize=auto&labelColor=black"/></a>
+</div>
+
+# Getting Started with Runtipi: A Personal Journey into Self-Hosting
+
+As someone who's spent countless hours tinkering with self-hosted services, I'm excited to share my experience with Runtipi - a tool that's revolutionizing how we manage home servers.
+
+## What is Runtipi?
+
+[Runtipi](https://runtipi.io/) is an [open-source](https://github.com/runtipi/runtipi) homeserver orchestrator that's been making waves in the self-hosting community. Think of it as your friendly neighborhood Docker manager, but with a sleek web interface that doesn't require a PhD in container orchestration to use.
+
+## Why I Chose Runtipi
+
+After years of manually managing Docker containers and fighting with configuration files, I found myself looking for a simpler solution. That's when I discovered Runtipi. What caught my attention was its focus on simplicity without sacrificing functionality.
+
+## Installation Guide (The Secure Way)
+
+Before we dive in, let's talk security. I've learned (sometimes the hard way) that proper setup is crucial.
+
+### Prerequisites
+
+- Ubuntu 18.04 LTS or higher (my personal recommendation)
+- At least 4GB RAM (8GB if you want to run multiple services smoothly)
+- 10GB+ free disk space
+- A cup of coffee ☕
+
+### Step-by-Step Installation
+
+1. First, ensure your system is up to date:
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+2. Install Runtipi using the official installer:
+
+```bash
+curl -L https://setup.runtipi.io | bash
+```
+
+### Security Best Practices
+
+Here's what I always recommend to my fellow self-hosters:
+
+1. **Never** expose Runtipi directly to the internet
+2. If using a VPS, always:
+   - Set up a proper firewall (ufw for exemple)
+   - Use a VPN (like Tailscale) for access or [cloudflare tunnels](https://decloudflare.crimeflare.eu.org/#deCloudflare=readme/en.md)
+   - Keep ports closed by default
+
+### Docker Considerations
+
+One thing I learned the hard way: if you already have Docker installed, make sure it's the official version. Here's a pro tip:
+
+```bash
+docker compose version
+```
+
+If that command fails, you'll need to install the Docker Compose plugin first.
+
+## Final Thoughts
+
+While Runtipi makes self-hosting incredibly accessible, remember that with great power comes great responsibility. Always prioritize security, keep your system updated, and join the community discussions if you need help.
+
+*Stay safe and happy self-hosting!*
+
+# Usefull resources
+
+- [runtipi source code](https://github.com/runtipi/runtipi)
+- [runtipi website](https://runtipi.io/)
+

@@ -1,0 +1,108 @@
+{
+    "person": {
+        "role": "Développeur Logiciel"
+    },
+    "newsletter": {
+        "title": "Abonnez-vous à la Newsletter de {firstName}",
+        "description": "J'écris occasionnellement sur le design, la technologie, et partage des réflexions sur l'intersection de la créativité et de l'ingénierie",
+        "button": "S'inscrire"
+    },
+    "home": {
+        "label": "Accueil",
+        "title": "Portfolio de Qcoudeyr",
+        "description": "Site web présentant mon travail en tant que {role} et des outils que je decouvre",
+        "headline": "Développeur logiciel",
+        "subline": "Je suis Quentin, un développeur logiciel junior de l'École 42. Je suis un fervent utilisateur de Linux, un partisan du logiciel libre, et un adepte de l'auto-hébergement.",
+        "blogline": "Derniers posts du blog"
+	},
+    "about": {
+        "label": "À propos",
+        "title": "À propos de moi",
+        "description": "Rencontrez {name}, {role} de {location}",
+        "intro": {
+            "title": "Introduction",
+            "description": "Je suis un passionné d'auto-hébergement et de logiciels libres avec une passion pour DevOps et l'administration système. Actuellement étudiant à l'École 42, j'ai terminé le tronc commun et me spécialise en DevOps et en administration système. Je vise à devenir bientôt un membre actif de la communauté."
+        },
+        "work": {
+            "title": "Expérience Professionnelle",
+            "experiences": {
+                "1": {
+                    "company": "Légion Étrangère Réserve",
+                    "timeframe": "2019 - 2024",
+                    "role": "Réserviste",
+                    "achievements": "Développé des compétences de discipline et de travail d'équipe en servant en tant que réserviste."
+                },
+                "2": {
+                    "company": "Projet Freelance",
+                    "timeframe": "2023",
+                    "role": "Administrateur Système",
+                    "achievements": "Déployé une infrastructure Linux avec fail2ban, WAF, et une suite Nextcloud auto-hébergée pour un client professionnel.;Configuré les paramètres réseau pour l'accessibilité externe et la sécurité."
+                }
+            }
+        },
+        "studies": {
+            "title": "Études",
+            "institutions": {
+                "1": {
+                    "name": "École 42",
+                    "description": "Terminé le tronc commun avec un accent sur DevOps et l'administration système."
+                },
+                "2": {
+                    "name": "Université de Montpellier",
+                    "description": "Étudié l'électronique et les systèmes embarqués avec STM32 et Arduino."
+                }
+            }
+        },
+        "technical": {
+            "title": "Compétences Techniques",
+            "skills": {
+                "1": {
+                    "title": "DevOps & SysAdmin",
+                    "description": "Expérimenté avec Ubuntu Server, la virtualisation (VMware ESXi, Proxmox), et les outils de monitoring comme ELK Stack, Prometheus, et Grafana."
+                },
+                "2": {
+                    "title": "Langages de Programmation",
+                    "description": "Compétent en C et C++. Familier avec Python, y compris les bibliothèques comme Selenium et Pandas."
+                },
+                "3": {
+                    "title": "Développement Full Stack",
+                    "description": "Apprentissage du développement full-stack en utilisant Django, React, et Next.js."
+                },
+                "4": {
+                    "title": "Sécurité & Réseaux",
+                    "description": "Installé Hashicorp Vault dans Docker, Nginx avec ModSecurity WAF, et configuré la surveillance réseau avec Cisco ISA 550W."
+                },
+                "5": {
+                    "title": "Projets Personnels",
+                    "description": "Construit un tableau de bord pour une voiture de rallye en utilisant Raspberry Pi et des applications Android personnalisées."
+                }
+            }
+        }
+    },
+    "blog": {
+        "label": "Blog",
+        "title": "Blog utile",
+        "description": "Lisez ce que {name} a fait récemment"
+    },
+    "work": {
+        "label": "Travail",
+        "title": "Mes projets",
+        "description": "Projets de conception et de développement par {name}"
+    },
+    "gallery": {
+        "label": "Galerie",
+        "title": "Ma galerie de photos",
+        "description": "Une collection de photos par {name}"
+    },
+    "resources": {
+        "label": "Ressources",
+        "title": "Listes de projets, resources et liens utiles",
+        "description": "Une liste de liens par {name}"
+    },
+	"warning":{
+		"title":"Cette page est en construction !"
+	},
+    "projectCard": {
+        "label": "Lire l'étude de cas"
+    }
+}
